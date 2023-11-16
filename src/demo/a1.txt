@@ -1,0 +1,33 @@
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+function Home() {
+  let[count,setCount]=useState(0)
+const incrementCounter=()=>{
+  setCount(count+1)
+}
+const decrementCounter = () => {
+      setCount(count - 1);
+    };
+  
+    const reset = () => {
+      setCount(0);
+    };
+  return (
+    <div>
+      <h1>welcome to homePage</h1>
+    <h3 className="text-muted">Count:{count} </h3>
+    <Button  onClick={incrementCounter} variant='primary'>Increment</Button>
+    <Button onClick={decrementCounter} variant='success'>Decrement</Button>
+    <Button onClick={reset} variant='info'>Reset</Button>
+    <hr/>
+    <ul className='list-group'>
+  <li className='list-group-item cofe'>Coffee</li>
+  <li className='list-group-item >Tea</li>
+  <li className='list-group-item >Milk</li>
+</ul> 
+    </div>
+  )
+}
+
+export default Home
